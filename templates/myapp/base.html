@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Base</title>
+    {% endblock %}
+</head>
+<body>
+        {% block navbar %}
+        <!-- <div class="left">
+            <h1>Library for All</h1>
+            <h2>My Books</h2>
+            <h2>Browse</h2>
+            <div class="search-bar">
+                <div class="search-facet">
+                    <label>
+                        <span aria-hidden="true" class="search-facet-value"></span>
+                        <select aria-label="Search by">
+                            <option value="all">All</option>
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="text">Text</option>
+                            <option value="subject">Subject</option>
+                            <option value="lists">Lists</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <button><a href="{% url 'login' %}">Login</a></button>
+            <button><a href="{% url 'signup' %}">Sign Up</a></button>
+        </div> -->
+        {% endblock %}
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

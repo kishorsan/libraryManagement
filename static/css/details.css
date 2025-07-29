@@ -1,0 +1,24 @@
+body{
+    background-color: palegoldenrod;
+    width: 80%;
+}
+
+.block {
+    position: relative;
+    left: 100px;
+    top: 100px;
+    display: flex;
+}
+
+#desc{
+    width: 450px;
+}
+
+#image {
+    height: 500px;
+    width: 400px;
+}
+
+p {
+    font-size: x-large;
+}

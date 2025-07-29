@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block title %}
+        <title>All books</title>
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v={% now 'U' %}">
+
+{% block content %}
+    <center>
+        <h1>Books List</h1>
+        <table border="1">
+            <tr>
+                <td>Book Title</td>
+                <td>ISBN</td>
+                <td>Price</td>
+                <td>Description</td>
+                <td>Genere</td>
+                <td>Photo</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </tr>
+        {% for book in books %}
+            <tr>
+                <td id="t"><a href="{% url 'detail' book.id %}">{{ book.bname }}</a></td>
+                <td>{{ book.ISBN}}</td>
+                <td>{{ book.price }}</td>
+                <td id="d">{{ book.description }} </td>
+                <td>{{ book.genere }} </td>
+                <td><img src="{{ book.photo.url }}" alt="{{ book.bname }}"></td>
+                <td><a href="{% url 'update' book.id %}">Update</a></td>
+                <td><a href="{% url 'delete' book.id %}">Delete</a> </td>
+            </tr>
+            
+        {% endfor %}
+        </table>
+    </center>
+        <button><a href="{% url 'insert' %}">Add more books</a></button>
+
+{% endblock %}

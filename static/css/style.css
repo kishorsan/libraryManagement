@@ -1,0 +1,42 @@
+body{
+    background-color: palegoldenrod;
+}
+
+nav{
+    display: flex;
+    position: sticky;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(243, 200, 122);
+}
+
+.left {
+    display: flex;
+}
+
+.left button{
+    height: 30px;
+    width: 65px;
+    border: none;
+    border-radius: 20px;
+}
+
+.right button{
+    height: 30px;
+    width: 65px;
+    border: none;
+    border-radius: 20px;
+}
+
+img{
+    height: 80px;
+    width: 60px;
+}
+
+#d{
+    width: 500;
+}
+
+#t{
+    width: 200;
+}

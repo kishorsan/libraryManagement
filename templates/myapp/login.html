@@ -1,0 +1,167 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}
+    <title>Login form</title>
+{% endblock %}
+
+{% block navbar %}
+
+<style>
+  *{
+    /* text-align:center; */
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    position: relative;
+    background-color: rgb(239, 229, 218);
+    width: 22.2rem;
+}
+.form-container {
+    border: 1px solid hsla(0, 0%, 65%, 0.158);
+    box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;  
+    z-index: 99;
+    padding: 2rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.login-container form .ip {
+    display: block;
+    padding: 14.5px;
+    width: 100%;
+    margin: 2rem 0;
+    color: var(--color);
+    outline: none;
+    background-color: #9191911f;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-size: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.login-container form .ip:focus {
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+    animation: wobble 0.3s ease-in;
+    -webkit-animation: wobble 0.3s ease-in;
+}
+
+.login-container form #button {
+    background-color: var(--primary-color);
+    color: var(--color);
+    display: block;
+    padding: 13px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.1s ease-in-out;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    background-color: rgb(107, 79, 110);
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#button:hover{
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+/*
+.login-container form button:hover {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+  }
+  
+  #login{
+    padding-top: 45px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+  }
+
+  form{
+    background-color: rgb(42, 143, 225);
+    border-radius: 10px;
+    padding: 5px 20px;
+	}
+
+  label{
+    font-size: 21px;
+  }
+
+  input{
+    font-size: 21px;
+    border-radius: 15px;
+    border:none;
+    padding: 7px 0px;
+  }
+
+  #btn{
+    padding: 10px 17px;
+  }*/
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<section class="container">
+  <div class="login-container">
+    <div class="form-container">
+      <h1 class="opacity">Login</h1>
+      <form method="POST">
+        <input class="ip" type="text" name="username" placeholder="USERNAME" required>
+        <input class="ip" type="password" name="password" placeholder="PASSWORD" required>
+        <div>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a> </div><br>
+        <div><input  class="opacity" id="button" type="submit" value="LOGIN"></div>
+        {% csrf_token %}
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- <div id="login">
+    <form method="post">
+      <legend><h1>Login</h1></legend>
+      <label>Username</label><br> <input type="text" value="" placeholder="username"><br><br>
+      <label>Password</label><br> <input type="text" value="" placeholder="password">
+      <br><br>
+      <input type="submit" value="Login" id="btn">
+    </form>
+  </div> -->
+
+{% endblock %}

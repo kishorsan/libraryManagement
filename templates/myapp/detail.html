@@ -1,0 +1,26 @@
+{% load static %}
+
+{% block title %}
+        <title>{{book.bname}}</title>
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/details.css' %}?v={% now 'U' %}">
+{% block content %}
+    <a href="{% url 'home' %}">Go back</a>
+    <div class="block">
+        <div id="image">
+            {% if book.photo %}
+                <img src="{{ book.photo.url }}" alt="book image" height="450" width="300">
+            {% endif %}
+        </div>
+        <div>
+            <h1>Title : {{ book.bname }}</h1>
+            <h2>ISBN : {{ book.ISBN}}</h2>
+            <p>Price : {{ book.price }}</p>
+            <p id="desc">Description : {{ book.description }}</p>
+            <p>Genere : {{ book.genere }}</p>
+        </div>
+                
+    </div>
+
+{% endblock %}

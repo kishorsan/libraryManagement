@@ -1,0 +1,60 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}
+    <title>Library</title>
+{% endblock %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}?v={% now 'U' %}">
+
+    
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="{% url 'home' %}" class="logo">BookShelf</a>
+        <a href="#" class="nav-link">My Books</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Browse</button>
+            <div class="dropdown-content">
+                <a href="#">Trending</a>
+                <a href="#">Lists</a>
+                <a href="#">Collections</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-center">
+        <form method="GET" action="" class="search-form">
+            <input type="text" name="query" placeholder="Search books...">
+            <select name="filter">
+                <option value="all">All</option>
+                <option value="author">Author</option>
+                <option value="title">Title</option>
+                <option value="subject">Subject</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="nav-right">
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+        {% else %}
+            <a href="{% url 'signup' %}" class="nav-link">Sign Up</a>
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+        {% endif %}
+        
+        <div class="dropdown">
+            <button class="dropbtn">&#9776;</button>
+            <div class="dropdown-content right">
+                <a href="#">Settings</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% endblock %}
