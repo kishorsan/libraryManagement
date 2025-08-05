@@ -20,7 +20,7 @@ def generate_book_data(n):
         fISBN = f.isbn13(separator="")
         fprice = random.randint(100, 999)
         fdescription = f.paragraph(nb_sentences=8)
-        fphoto = "static/cover.jpg"
+        fphoto = "images/cover.jpg"
         fgenere = random.choice(generes)
         b = Book.objects.get_or_create(bname=fbname, ISBN=fISBN, price=fprice, description=fdescription, photo=fphoto, genere=fgenere)
 

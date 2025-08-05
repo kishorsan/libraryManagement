@@ -16,7 +16,6 @@ class Book(models.Model):
     genere = models.ForeignKey("Genere", on_delete=models.CASCADE)
     quantity = models.IntegerField()
     
-
     def __str__(self):
         return self.bname
 

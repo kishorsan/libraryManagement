@@ -19,8 +19,6 @@ def login(request):
         if username in users:
             if users[username] == (username, password):
                 return redirect('/')
-        else:
-            return redirect('/login')
     return render(request, 'myapp/login.html')
 
 def signup(request):
